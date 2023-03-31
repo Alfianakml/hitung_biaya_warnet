@@ -28,15 +28,15 @@ class MainActivity : AppCompatActivity() {
         if(selectedValue == "Regular"){
             val reg = 5000
             val hasilRegular = jam.toInt() * reg
-            binding.bayarTxtview.text = "Total Yang Anda Bayarkan Adalah RP. $hasilRegular"
+            binding.bayarTxtview.text = getString(R.string.harga_x, hasilRegular)
         }else if (selectedValue == "VIP"){
             val vip = 7000
             val hasilVip = jam.toInt() * vip
-            binding.bayarTxtview.text = "Total Yang Anda Bayarkan Adalah RP. $hasilVip"
+            binding.bayarTxtview.text = getString(R.string.harga_x, hasilVip)
         }else if(selectedValue == "VVIP"){
             val vvip = 9000
             val hasilvvip = jam.toInt() * vvip
-            binding.bayarTxtview.text = "Total Yang Anda Bayarkan Adalah RP. $hasilvvip"
+            binding.bayarTxtview.text = getString(R.string.harga_x, hasilvvip)
         }
     }
 }

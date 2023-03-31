@@ -10,5 +10,5 @@
         <item>VIP</item>
         <item>VVIP</item>
     </string-array>
-    <string name="harga_x">Hasilnya : %1$.2f</string>
+    <string name="harga_x">Total Yang Harus Dibayarkan : Rp. %1$d</string>
 </resources>
