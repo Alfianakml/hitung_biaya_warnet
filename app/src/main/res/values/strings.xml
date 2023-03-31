@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hitung Biaya Warnet</string>
+    <string name="warnetIntro">Warnet Intro</string>
+    <string name="jam">Mau Main Berapa Jam?</string>
+</resources>
