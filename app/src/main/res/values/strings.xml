@@ -3,10 +3,12 @@
     <string name="warnetIntro">Hitung Biaya Warnet</string>
     <string name="jam">Mau Main Berapa Jam?</string>
     <string name="hitung">Hitung</string>
+    <string name="jam_invalid">Jam Tidak Boleh Kosong</string>
     <string name="bayar">Total Yang harus Anda Bayarkan Adalah : Rp.</string>
-    <string-array name="tipe_array">
+    <string-array name="planets_array">
         <item>Regular</item>
         <item>VIP</item>
         <item>VVIP</item>
     </string-array>
+    <string name="harga_x">Hasilnya : %1$.2f</string>
 </resources>
