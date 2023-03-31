@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Hitung Biaya Warnet</string>
-    <string name="warnetIntro">Warnet Intro</string>
+    <string name="warnetIntro">Hitung Biaya Warnet</string>
     <string name="jam">Mau Main Berapa Jam?</string>
+    <string name="hitung">Hitung</string>
+    <string name="bayar">Total Yang harus Anda Bayarkan Adalah : Rp.</string>
+    <string-array name="tipe_array">
+        <item>Regular</item>
+        <item>VIP</item>
+        <item>VVIP</item>
+    </string-array>
 </resources>
