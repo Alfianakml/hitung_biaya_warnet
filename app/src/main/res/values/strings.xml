@@ -13,4 +13,11 @@
     <string name="harga_x">Total Yang Harus Dibayarkan : Rp. %1$d</string>
     <string name="user">Username :</string>
     <string name="pass">Password :</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="copyright">Hitung Biaya Warnet merupakan sebuah aplikasi Android untuk
+menghitung harga yang harus dibayarkan ketika membooking pc di warnet dan mengetahui
+Username dan password yang akan digunakan saat memakai pc tersebut.\n\nAplikasi ini dibuat untuk kelas
+Mobpro 1. Temukan kodenya di https://github.com/Alfianakml/hitung_biaya_warnet\n\nCopyright © 2023 Alfian Akmal.\nAll rights reserved.</string>
+    <string name="bagikan">Bagikan</string>
+    <string name="bagikan_template">%1s\n%2s\n%3$s</string>
 </resources>

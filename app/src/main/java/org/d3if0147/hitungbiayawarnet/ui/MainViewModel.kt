@@ -1,4 +1,4 @@
-package org.d3if0147.hitungbiayawarnet
+package org.d3if0147.hitungbiayawarnet.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
