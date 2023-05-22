@@ -20,4 +20,11 @@ Username dan password yang akan digunakan saat memakai pc tersebut.\n\nAplikasi 
 Mobpro 1. Temukan kodenya di https://github.com/Alfianakml/hitung_biaya_warnet\n\nCopyright © 2023 Alfian Akmal.\nAll rights reserved.</string>
     <string name="bagikan">Bagikan</string>
     <string name="bagikan_template">%1s\n%2s\n%3$s</string>
+    <string name="belum_ada_data">Belum ada data</string>
+    <string name="histori">Histori</string>
+    <string name="jam_x">JAM : %1$s</string>
+    <string name="tipe_x">TIPE : %1$s</string>
+    <string name="konfirmasi_hapus">Hapus histori?</string>
+    <string name="hapus">Hapus</string>
+    <string name="batal">Batal</string>
 </resources>
