@@ -14,6 +14,7 @@ import org.d3if0147.hitungbiayawarnet.R
 import org.d3if0147.hitungbiayawarnet.databinding.FragmentMainBinding
 import org.d3if0147.hitungbiayawarnet.db.WarnetDb
 import org.d3if0147.hitungbiayawarnet.model.HasilHitung
+import org.d3if0147.hitungbiayawarnet.ui.game.GameFragment
 
 class FragmentMain : Fragment() {
     private lateinit var binding: FragmentMainBinding
@@ -57,6 +58,9 @@ class FragmentMain : Fragment() {
         binding.btnHitung.setOnClickListener { hitungWarnet() }
         binding.shareButton.setOnClickListener { shareData() }
         viewModel.getUserPassWarnet().observe(requireActivity()) {showResult(it)}
+        binding.gameButton.setOnClickListener { findNavController().navigate(
+            R.id.action_fragmentMain_to_gameFragment
+        ) }
 
     }
 
@@ -91,7 +95,6 @@ class FragmentMain : Fragment() {
         binding.passTxtview.text = "Password : " + result.password
         binding.bayarTxtview.text = getString(R.string.harga_x, result.harga)
         binding.shareButton.visibility = View.VISIBLE
-
 
 
     }

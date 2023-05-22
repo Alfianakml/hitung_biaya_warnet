@@ -27,4 +27,9 @@ Mobpro 1. Temukan kodenya di https://github.com/Alfianakml/hitung_biaya_warnet\n
     <string name="konfirmasi_hapus">Hapus histori?</string>
     <string name="hapus">Hapus</string>
     <string name="batal">Batal</string>
+    <string name="game">List Game</string>
+    <string name="switch_layout">Ubah tampilan</string>
+    <string name="user_x">Username : %1$s</string>
+    <string name="pass_x">Password : %1$s</string>
+
 </resources>

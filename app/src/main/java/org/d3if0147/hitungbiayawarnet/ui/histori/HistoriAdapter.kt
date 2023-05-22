@@ -59,8 +59,8 @@ androidx.recyclerview.widget.ListAdapter<WarnetEntity, HistoriAdapter.ViewHolder
         fun bind(item: WarnetEntity, view: View) = with(binding){
             val hasilHitung = item.hitungPemakaian()
             tanggalTextView.text = dateFormatter.format(Date(item.tanggal))
-            userTextView.text = hasilHitung.username
-            passTextView.text = hasilHitung.password
+            userTextView.text = root.context.getString(R.string.user_x, hasilHitung.username)
+            passTextView.text = root.context.getString(R.string.pass_x, hasilHitung.password)
             jamTextView.text = root.context.getString(R.string.jam_x, hasilHitung.jam.toString())
             tipeTextView.text = root.context.getString(R.string.tipe_x, item.tipe.toString())
             binding.button.setOnClickListener { hapusData(item.id, view.context) }
