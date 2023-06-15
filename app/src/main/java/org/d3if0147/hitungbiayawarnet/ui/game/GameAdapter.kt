@@ -3,6 +3,7 @@ package org.d3if0147.hitungbiayawarnet.ui.game
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import org.d3if0147.hitungbiayawarnet.R
 import org.d3if0147.hitungbiayawarnet.databinding.ListItemBinding
 import org.d3if0147.hitungbiayawarnet.model.Game
 
@@ -20,7 +21,7 @@ class GameAdapter : RecyclerView.Adapter<GameAdapter.ViewHolder>(){
         fun bind(game: Game) = with(binding){
             nameTextView.text = game.nama
             publisherTextView.text= game.publisher
-            imageView.setImageResource(game.imageResId)
+            imageView.setImageResource(R.drawable.fortnite)
 
 
         }
