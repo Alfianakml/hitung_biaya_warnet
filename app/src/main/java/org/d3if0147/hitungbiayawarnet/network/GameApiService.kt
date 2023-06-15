@@ -8,7 +8,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 private const val BASE_URL = "https://raw.githubusercontent.com/" +
-        "Alfianakml/json-mopro/game/"
+        "Alfianakml/game-api/master/"
 
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
@@ -19,12 +19,15 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface GameApiService {
-    @GET("game.json")
+    @GET("game-api.json")
     suspend fun getGame(): List<Game>
 }
 
 object GameApi {
     val service: GameApiService by lazy {
         retrofit.create(GameApiService::class.java)
+    }
+    fun getGameUrl(imageResId: String): String {
+        return "$BASE_URL$imageResId.png"
     }
 }
