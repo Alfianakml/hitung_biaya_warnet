@@ -17,6 +17,7 @@ import org.d3if0147.hitungbiayawarnet.R
 import org.d3if0147.hitungbiayawarnet.data.SettingsDataStore
 import org.d3if0147.hitungbiayawarnet.data.dataStore
 import org.d3if0147.hitungbiayawarnet.databinding.FragmentGameBinding
+import org.d3if0147.hitungbiayawarnet.network.ApiStatus
 
 
 class GameFragment : Fragment() {
@@ -76,8 +77,25 @@ class GameFragment : Fragment() {
         viewModel.getData().observe(viewLifecycleOwner){
             myAdapter.updateData(it)
         }
-    }
+        viewModel.getStatus().observe(viewLifecycleOwner) {
+            updateProgress(it)
+        }
 
+    }
+    private fun updateProgress(status: ApiStatus) {
+        when (status) {
+            ApiStatus.LOADING -> {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            ApiStatus.SUCCESS -> {
+                binding.progressBar.visibility = View.GONE
+            }
+            ApiStatus.FAILED -> {
+                binding.progressBar.visibility = View.GONE
+                binding.networkError.visibility = View.VISIBLE
+            }
+        }
+    }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.menu_main, menu)
 

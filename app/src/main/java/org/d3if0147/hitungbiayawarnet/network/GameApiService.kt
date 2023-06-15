@@ -31,3 +31,4 @@ object GameApi {
         return "$BASE_URL$imageResId.png"
     }
 }
+enum class ApiStatus { LOADING, SUCCESS, FAILED }
