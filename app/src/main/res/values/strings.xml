@@ -32,4 +32,9 @@ Mobpro 1. Temukan kodenya di https://github.com/Alfianakml/hitung_biaya_warnet\n
     <string name="user_x">Username : %1$s</string>
     <string name="pass_x">Password : %1$s</string>
     <string name="koneksi_error">Koneksi Error</string>
+    <string name="channel_name">Updater</string>
+    <string name="channel_desc">Update data game otomatis</string>
+    <string name="notif_title">New Game Release!!!</string>
+    <string name="notif_text">Cek Gamenya dan mainkan Sekarang Jugaa...</string>
+
 </resources>

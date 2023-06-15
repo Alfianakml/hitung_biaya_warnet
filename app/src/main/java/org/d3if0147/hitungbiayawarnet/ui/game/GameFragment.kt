@@ -1,7 +1,12 @@
 package org.d3if0147.hitungbiayawarnet.ui.game
 
+import android.Manifest
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.view.*
+import androidx.annotation.RequiresApi
+import androidx.core.app.ActivityCompat
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -13,6 +18,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
+import org.d3if0147.hitungbiayawarnet.MainActivity
 import org.d3if0147.hitungbiayawarnet.R
 import org.d3if0147.hitungbiayawarnet.data.SettingsDataStore
 import org.d3if0147.hitungbiayawarnet.data.dataStore
@@ -80,6 +86,7 @@ class GameFragment : Fragment() {
         viewModel.getStatus().observe(viewLifecycleOwner) {
             updateProgress(it)
         }
+        viewModel.scheduleUpdater(requireActivity().application)
 
     }
     private fun updateProgress(status: ApiStatus) {
@@ -89,6 +96,9 @@ class GameFragment : Fragment() {
             }
             ApiStatus.SUCCESS -> {
                 binding.progressBar.visibility = View.GONE
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    requestNotificationPermission()
+                }
             }
             ApiStatus.FAILED -> {
                 binding.progressBar.visibility = View.GONE
@@ -112,4 +122,19 @@ class GameFragment : Fragment() {
         }
         return super.onOptionsItemSelected(item)
     }
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    private fun requestNotificationPermission() {
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.POST_NOTIFICATIONS
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            ActivityCompat.requestPermissions(
+                requireActivity(),
+                arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+                MainActivity.PERMISSION_REQUEST_CODE
+            )
+        }
+    }
+
 }
