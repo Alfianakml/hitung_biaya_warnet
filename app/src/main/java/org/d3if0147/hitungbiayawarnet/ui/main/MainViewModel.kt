@@ -26,7 +26,7 @@ class MainViewModel(private val db: WarnetDao): ViewModel() {
     fun Warnet.hitungPemakaian(): HasilHitung{
         fun generateRandomUser(length: Int): String {
             val charPool: List<Char> =
-                ('A'..'Z') + ('A'..'Z') // Define the characters to choose from
+                ('A'..'Z') + ('A'..'Z')
             return (1..length)
                 .map { Random.nextInt(0, charPool.size) }
                 .map(charPool::get)
@@ -34,7 +34,7 @@ class MainViewModel(private val db: WarnetDao): ViewModel() {
         }
         fun generateRandomPassword(length: Int): String {
             val charPool: List<Char> =
-                ('A'..'Z') + ('0'..'9') // Define the characters to choose from
+                ('A'..'Z') + ('0'..'9')
             return (1..length)
                 .map { Random.nextInt(0, charPool.size) }
                 .map(charPool::get)

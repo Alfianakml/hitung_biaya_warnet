@@ -1,16 +1,22 @@
 package org.d3if0147.hitungbiayawarnet.ui.game
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.d3if0147.hitungbiayawarnet.R
 import org.d3if0147.hitungbiayawarnet.model.Game
+import org.d3if0147.hitungbiayawarnet.network.GameApi
 
 class GameViewModel : ViewModel() {
     private val data = MutableLiveData<List<Game>>()
 
     init {
         data.value = initData()
+        retrieveData()
     }
     private fun initData(): List<Game> {
         return listOf(
@@ -25,5 +31,16 @@ class GameViewModel : ViewModel() {
             Game("Super Smash Bros Ultimate", "Nintendo", R.drawable.super_smash_bros_ultimate),
             )
     }
+    private fun retrieveData() {
+        viewModelScope.launch (Dispatchers.IO) {
+            try {
+                val result = GameApi.service.getGame()
+                Log.d("GameViewModel", "Success: $result")
+            } catch (e: Exception) {
+                Log.d("GameViewModel", "Failure: ${e.message}")
+            }
+        }
+    }
+
     fun getData(): LiveData<List<Game>> = data
 }
